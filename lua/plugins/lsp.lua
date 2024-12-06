@@ -16,6 +16,8 @@ return {
         enabled = false,
       },
     },
+    -- autoformat on save
+    -- there is now a vim.g.autoformat flag in config/options that seems to replace this
     autoformat = false,
     diagnostics = {
       virtual_text = false,
