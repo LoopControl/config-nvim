@@ -9,4 +9,5 @@ vim.opt.wrap = true
 -- no spellcheck
 vim.opt_local.spell = false
 
+-- disable autoformat on save
 vim.g.autoformat = false
