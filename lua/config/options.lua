@@ -11,3 +11,6 @@ vim.opt_local.spell = false
 
 -- disable autoformat on save
 vim.g.autoformat = false
+
+-- disable all diagnostics (can manually enable per file with <leader>ud)
+-- vim.diagnostic.enable(false)
