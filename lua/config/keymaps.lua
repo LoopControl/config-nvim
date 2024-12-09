@@ -9,3 +9,8 @@ map("n", "-", function()
   require("telescope.builtin").lsp_document_symbols({symbols={"method","function"}})
 end
 )
+
+map("n", "<leader>it", function()
+  local time = os.date("%H:%M ")
+  vim.api.nvim_put({time}, "c", true, true)
+end, { desc = "Insert time - HH:mm" }) 

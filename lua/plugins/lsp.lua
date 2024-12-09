@@ -11,6 +11,7 @@ return {
       },
       marksman = {
         enabled = false,
+        diagnostics = false,
       },
       lua_ls = {
         enabled = false,
