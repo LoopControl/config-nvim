@@ -14,3 +14,6 @@ vim.g.autoformat = false
 
 -- disable all diagnostics (can manually enable per file with <leader>ud)
 -- vim.diagnostic.enable(false)
+
+-- auto-session recommended
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
