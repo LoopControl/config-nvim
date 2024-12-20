@@ -1,18 +1,21 @@
+
 return {
-  -- snacks
+  {
+    "folke/which-key.nvim",
+    opts = {
+      -- put which key back at bottom of screen instead of floaty broken layout
+      preset = "classic",
+    }
+  },
   {
     "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
     opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-      bigfile = { enabled = true },
-      notifier = { enabled = true },
-      quickfile = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = { enabled = true },
+      -- disable indent lines
+      indent = {
+        enabled = false,
+        -- only_scope = true,
+        -- only_current = true,
+      },
       dashboard = {
         enabled = true,
         sections = {
@@ -31,19 +34,6 @@ return {
       },
     },
     keys = {
-    },
-  },
-  -- add scrollbar
-  {
-    "dstein64/nvim-scrollview",
-    opts = {
-    },
-  },
-  -- session manager
-  {
-    'rmagatti/auto-session',
-    opts = {
-      suppressed_dirs = { '~/downloads' },
     },
   },
 }
