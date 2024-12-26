@@ -7,6 +7,29 @@ return {
       preset = "classic",
     }
   },
+  -- trim trailing whitespace
+  {
+    "cappyzawa/trim.nvim",
+    opts = {
+      trim_on_write = false,
+
+      -- if you want to ignore markdown file.
+      -- you can specify filetypes.
+      ft_blocklist = {"markdown"},
+
+      highlight = false,
+    },
+    keys = {
+      { "<leader>iw", "<cmd>Trim<CR>", desc = "Trim Whitespace" },
+    }
+  },
+  -- session manager
+  {
+    'rmagatti/auto-session',
+    opts = {
+      suppressed_dirs = { '~/downloads' },
+    },
+  },
   {
     "folke/snacks.nvim",
     opts = {
