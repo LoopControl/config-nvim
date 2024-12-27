@@ -24,12 +24,12 @@ return {
     }
   },
   -- session manager
-  {
-    'rmagatti/auto-session',
-    opts = {
-      suppressed_dirs = { '~/downloads' },
-    },
-  },
+  -- {
+  --   'rmagatti/auto-session',
+  --   opts = {
+  --     suppressed_dirs = { '~/downloads' },
+  --   },
+  -- },
   {
     "folke/snacks.nvim",
     opts = {
