@@ -23,6 +23,20 @@ return {
       { "<leader>iw", "<cmd>Trim<CR>", desc = "Trim Whitespace" },
     }
   },
+  -- formatter (built in)
+  {
+  "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        json = { "prettier" },
+        html = { "prettier" },
+        css = { "prettier" },
+        scss = { "prettier" },
+      },
+    },
+  },
   -- session manager
   -- {
   --   'rmagatti/auto-session',
