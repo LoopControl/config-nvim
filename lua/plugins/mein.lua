@@ -1,4 +1,44 @@
 return {
+  -- {
+  --   "yetone/avante.nvim",
+  --   event = "VeryLazy",
+  --   lazy = true,
+  --   build = "make",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   opts = {
+  --     provider = "ollama",
+  --     vendors = {
+  --       ollama = {
+  --         __inherited_from = "openai",
+  --         api_key_name = "",
+  --         endpoint = "http://127.0.0.1:11434/v1",
+  --         -- model = "qwen2.5-coder:7b",
+  --         model = "qwen2.5-coder:7b-instruct-q5_K_M"
+  --       },
+  --     },
+  --   },
+  -- },
+  {
+    "mein-chat",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    name = "mein-chat",
+    dir = "~/Dev/vim/mein-chat.nvim",
+    dev = true,
+    opts = {
+      model = "mannix/llama3.1-8b-abliterated",
+      -- model = "qwen2.5-coder:7b"
+      -- model = "qwen2.5-coder:7b-instruct-q5_K_M"
+    },
+    keys = {
+      { "<leader>ia", "<cmd>MeinChat<CR>", desc = "Mein Chat" },
+      { "<leader>ir", "<cmd>Lazy reload mein-chat<CR>", desc = "Reload mein-chat" },
+    },
+  },
   {
     "folke/which-key.nvim",
     opts = {
@@ -78,20 +118,5 @@ return {
       },
     },
     keys = {},
-  },
-  -- smear cursor (animated cursor)
-  {
-    "sphamba/smear-cursor.nvim",
-    opts = {
-      -- Smear cursor when moving within line or to neighbor lines.
-      smear_between_neighbor_lines = false,
-
-      -- Draw the smear in buffer space instead of screen space when scrolling
-      scroll_buffer_space = true,
-
-      -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
-      -- Smears will blend better on all backgrounds.
-      legacy_computing_symbols_support = true,
-    },
   },
 }
