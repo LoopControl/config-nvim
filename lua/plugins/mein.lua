@@ -40,6 +40,22 @@ return {
     },
   },
   {
+    'Xuyuanp/scrollbar.nvim',
+    -- no setup required
+    init = function()
+        local group_id = vim.api.nvim_create_augroup('scrollbar_init', { clear = true })
+
+        vim.api.nvim_create_autocmd({ 'BufEnter', 'WinScrolled', 'WinResized' }, {
+            group = group_id,
+            desc = 'Show or refresh scrollbar',
+            pattern = { '*' },
+            callback = function()
+                require('scrollbar').show()
+            end,
+        })
+    end,
+  },
+  {
     "folke/which-key.nvim",
     opts = {
       -- put which key back at bottom of screen instead of floaty broken layout
