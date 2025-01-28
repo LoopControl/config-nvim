@@ -1,26 +1,4 @@
 return {
-  -- {
-  --   "yetone/avante.nvim",
-  --   event = "VeryLazy",
-  --   lazy = true,
-  --   build = "make",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  --   opts = {
-  --     provider = "ollama",
-  --     vendors = {
-  --       ollama = {
-  --         __inherited_from = "openai",
-  --         api_key_name = "",
-  --         endpoint = "http://127.0.0.1:11434/v1",
-  --         -- model = "qwen2.5-coder:7b",
-  --         model = "qwen2.5-coder:7b-instruct-q5_K_M"
-  --       },
-  --     },
-  --   },
-  -- },
   {
     "mein-chat",
     dependencies = {
@@ -30,29 +8,34 @@ return {
     dir = "~/Dev/vim/mein-chat.nvim",
     dev = true,
     opts = {
-      model = "mannix/llama3.1-8b-abliterated",
+      -- url = "http://localhost:5000/v1",
+      -- api_key = "sk-1234",
+      -- model = "mannix/llama3.1-8b-abliterated",
+      model = "mein-qwen2.5-32b-agi",
       -- model = "qwen2.5-coder:7b"
       -- model = "qwen2.5-coder:7b-instruct-q5_K_M"
     },
     keys = {
-      { "<leader>ia", "<cmd>MeinChat<CR>", desc = "Mein Chat" },
+      { "<leader>ia", "<cmd>MeinChat<CR>", mode = { "n", "v" }, desc = "MeinChat - Send" },
+      { "<leader>is", "<cmd>MeinChatToggle<CR>", mode = { "n", "v" }, desc = "MeinChat - Toggle" },
+      { "<leader>if", "<cmd>MeinChatStop<CR>", mode = { "n", "v" }, desc = "MeinChat - Stop Gen" },
       { "<leader>ir", "<cmd>Lazy reload mein-chat<CR>", desc = "Reload mein-chat" },
     },
   },
   {
-    'Xuyuanp/scrollbar.nvim',
+    "Xuyuanp/scrollbar.nvim",
     -- no setup required
     init = function()
-        local group_id = vim.api.nvim_create_augroup('scrollbar_init', { clear = true })
+      local group_id = vim.api.nvim_create_augroup("scrollbar_init", { clear = true })
 
-        vim.api.nvim_create_autocmd({ 'BufEnter', 'WinScrolled', 'WinResized' }, {
-            group = group_id,
-            desc = 'Show or refresh scrollbar',
-            pattern = { '*' },
-            callback = function()
-                require('scrollbar').show()
-            end,
-        })
+      vim.api.nvim_create_autocmd({ "BufEnter", "WinScrolled", "WinResized" }, {
+        group = group_id,
+        desc = "Show or refresh scrollbar",
+        pattern = { "*" },
+        callback = function()
+          require("scrollbar").show()
+        end,
+      })
     end,
   },
   {
