@@ -99,6 +99,9 @@ return {
         -- only_scope = true,
         -- only_current = true,
       },
+      image= {
+        enabled = true,
+      },
       dashboard = {
         enabled = true,
         sections = {
